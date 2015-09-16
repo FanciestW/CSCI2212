@@ -20,6 +20,9 @@ int main(void)
 	input();
 }
 
+/*=============================================================================
+Gets a user inputted input file, output file, keyword, and replacement word
+=============================================================================*/
 int getInfo(void)
 {
 	printf("Input File: ");
