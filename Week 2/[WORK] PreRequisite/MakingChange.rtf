@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww14320\viewh18500\viewkind1
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs26 \cf0 CSCI 2212  Fall 2015\
+Program Specification --  Making Change \
+\
+Problem Statement:   \
+A customer selects one item and types in the price.  You must calculate the tax and display the total price.  The user then inputs the amount tendered, and you output a list of bills and coins to give in change.\
+\
+Inputs:  price, amount tendered.\
+\
+Outputs:  list of bills and coins.\
+\
+Formulas:   total = price * (1 + taxRate)  \
+	        change = tendered - total\
+\
+Constants: Sales tax rate is 6% = .06\
+\
+Other:  We have $20, $10, $5, $1, .25, .10, .05, and .01\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 	Price must be > 0.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 	Fatal:  tendered < total\
+	Use doubles\
+	Round the total price to the nearest penny.\
+---------------------------------------------------------------------------------------\
+Test plan: \
+		Price	 Tendered	Change\
+\
+1. easy:	.90		1.00		one nickel\
+		need more easy cases.\
+\
+2. limits	.01		.01		nothing\
+		no realistic upper limit.\
+\
+3. bad	-.01				FATAL: negative price\
+		10		9.99		FATAL: tendered is too low\
+		.00				FATAL: price is too low \
+		.001				FATAL: entry error, price is too low.\
+\
+4. normal   .17		1.00		3 quarters, nickel, 2 pennies\
+		need more normal cases.\
+}
