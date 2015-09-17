@@ -3,21 +3,24 @@
 
 //=============================================================================
 int getInfo(void);
-int input(void);
+int ioFile(void);
 int check(int x, cstream inputFile, cstream outputFile);
 //=============================================================================
 
+//=============================================================================
 char INPUT[256];
 char OUTPUT[256];
 char KEYWORD[256];
 char REPLACE[256];
 char MATCH[256];
+//=============================================================================
 
 int main(void)
 {
 	banner();
 	getInfo();
-	input();
+	ioFile();
+	bye();
 }
 
 /*=============================================================================
@@ -35,7 +38,10 @@ int getInfo(void)
 	scanf("%255s", REPLACE);
 }
 
-int input(void)
+/*=============================================================================
+Reads input file and writes to output file, replacing keyword with replacement
+=============================================================================*/
+int ioFile(void)
 {
 	cstream inputFile = fopen(INPUT, "r");
 	cstream outputFile = fopen(OUTPUT, "w");
@@ -60,6 +66,9 @@ int input(void)
 	bye();
 }
 
+/*=============================================================================
+Checks the word matches the keyword. If so, word is replaces.
+=============================================================================*/ 
 int check(int x, cstream inputFile, cstream outputFile)
 {
 	MATCH[0] = x;
