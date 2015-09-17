@@ -63,7 +63,6 @@ int ioFile(void)
 	}
 	fclose(inputFile);
 	fclose(outputFile);
-	bye();
 }
 
 /*=============================================================================
@@ -79,7 +78,6 @@ int check(int x, cstream inputFile, cstream outputFile)
 		else
 		{
 			fprintf(outputFile, "%s", MATCH);
-			printf("%s\n",MATCH);
 			return 0;
 		}
 	}

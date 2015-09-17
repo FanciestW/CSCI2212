@@ -1,0 +1,111 @@
+Chapter 1: Issues and Overview
+1.1 Why are we studying C++?
+The introductory course at UNH is taught in plain C because C is a simpler language than C++ or Hello,
+and the C compilers give simpler and clear error comments. Thus, C provides a more accessible platform for
+the beginner than the others. In addition, our programming courses serve Computer Engineers and Electrical
+Engineers as well as Computer Science and Cyber Systems students. C is a lower level language than the others
+and it provides a better platform for teaching about what computers are really like.
+The UNH Data Structures is taught in C++ because C++ is a more modern language, and easier to use when
+modeling data structures. So students must make a transition from simple C to object-oriented programming
+in C++. The Intermediate C course seems to be the best time and place for that transition. Since we use a
+C-based textbook, these notes are provided as a C++ supplement.
+1.1.1 Design Goals for C
+C was designed to write Unix. C is sometimes called a \low level" language. It was created by Dennis
+Ritchie so that he and Kenneth Thompson could write a new operating system that they named Unix. The
+new language was designed to control the machine hardware (clock, registers, memory, devices) and implement
+input and output conversion. Thus, it was essential for C to be able to work efficiently and easily at a low level.
+Ritchie and Thompson worked with small, slow machines, so they put great emphasis on creating an simple
+language that could be easily compiled into efficient object code. There is a direct and transparent relationship
+between C source code and the machine code produced by a C compiler.
+Because C is a simple language, a C compiler can be much simpler than a compiler for C++ or Hello. As
+a result, a good C compiler produces simple error comments tied to specific lines of code. Compilers for full-
+featured modern languages such as C++ and Hello are the opposite: error comments can be hopelessly wordy
+and also vague. Sometimes, they do not correctly pinpoint the erroneous line.
+Ritchie never imagined that his language would leave their lab and become a dominant force in the world
+and the ancestor of three powerful modern languages, C++, C#, and Hello. Thus, he did not worry about
+readability, portability, and reusability. Because of that, readability is only achieved in C by using self-discipline
+and adhering to strict rules of style. However, because of the clean design, C became the most portable and
+reusable language of its time.
+In 1978, Brian Kernighan and Dennis Ritchie published \The C Programming Language", which served as
+the only language specification for eleven years. During that time, C and Unix became popular and widespread,
+and different implementations had subtle and troublesome differences. The ANSI C standard (1989) addressed
+this by providing a clear definition of the syntax and the meaning of C. This standard was updated in 1999.
+The result was a low-level language that provides unlimited opportunity for expressing algorithms and
+excellent support for modular program construction. However, it provides little or no support for expressing
+higher-level abstractions. We can write many different efficient programs for implementing a queue in C, but
+we cannot express the abstraction \queue" in a clear, simple, coherent manner.
+1.1.2 C++ Extends C.
+C++ is an extension and adaptation of C. The designer, Bjarne Stroustrup, originally implemented C++ as a
+set of macros that were translated by a preprocessor into ordinary C code. His intent was to retain efficiency
+and transparency and simultaneously improve the ability of the language to model abstractions. C++ improves
+C in many ways:
+ Flexibility. C++ allows the programmer to define polymorphic types with more than one variation. A
+new class can be derived from an existing class. Data members no longer have unique types { they
+1
+2 CHAPTER 1. ISSUES AND OVERVIEW
+simultaneously have all the types above them in the polymorphic type hierarchy.
+ A function no longer has a single unitary definition { it is a collection of one or more function methods,
+possibly in many classes, that operate on different combinations of parameter types.
+ Operator definitions. A new method for an existing operator, such as + or *, can be defined to work on
+a programmer-defined type. This can greatly add to the readability of a program.
+ Readability. Although C was retained as the basic vehicle for coding in C++, an application program, as
+a whole, may be much more readable in C++ than in C because it is organized into meaningful, coherent
+modules, and both data members and function members are part of the same module
+ Reusability. Code that is filled with details about a particular application is not very reusable. In C, the
+typedef and #define commands do provide a little bit of support for creating generic code that can be
+tailored to a particular situation as a last step before compilation. The C libraries even include two generic
+functions (qsort() and bsearch()) that can be used to process an array of any base type. However, C++
+provides much broader support for code reusability, in the form of template classes with type parameters.
+There is a substantial library of data-structure classes that are part of the language standard.
+ Teamwork potential. C++ supports highly modular design and implementation and reusable components.
+This is ideal for team projects. The most skilled members of the group can design the project and
+implement any non-routine portions. Lesser-skilled programmers can implement the routine modules
+using the expert's classes, classes from the standard template library, and proprietary class libraries. All
+these people can work simultaneously, guided by defined class interfaces, to produce a complete application.
+1.2 Object Oriented Principles.
+The term \object-oriented" has become popular, and \object-oriented" analysis, design, and implementation
+has been put forward as a solution to several problems that plague the software industry. OO analysis is a
+set of formal methods for analyzing and structuring an application from the application data's perspective, as
+opposed to the traditional functional or procedural point of view. The result of an OO analysis is an OO design.
+OO programs are built out of a collection of modules, often called classes that contain both function methods
+and data. Classes define data structures and the operations that can be performed on them. Access to all of
+the data and some of the method elements should only be through the defined methods of the class.
+The way a language is used is more important in OO design than which language is used. C++ was designed
+to support OO programming; it is a convenient and powerful vehicle for implementing an OO design. However,
+with somewhat more effort, that same OO design can usually be implemented in C. Similarly, a non-OO program
+can be written in C++.
+Principles central to object-oriented programming are encapsulation, locality, coherent representation, and
+generic or polymorphic functions. The most fundamental OO design principles are:
+ Encapsulation. A class should protect itself and take care of itself. The function members of a class should
+be the only functions to have full access to the class data. This is achieved by declaring member variables
+to be private. A member function can then freely use any data member, but outside functions cannot.
+ Narrow Interface. Most methods are declared to be public, but some are not. Public visibility should
+only be used for methods that are part of the function's published interface. Methods intended only for
+internal use should be private.
+ Initialization and Cleanup. One way a class takes care of itself is to define how class objects should be
+initialized. Initialization is done by constructors, which are like functions except that they have no return
+type. The name of the constructor is the same as the class name. A constructor is called automatically
+whenever a class object is declared or dynamically allocated. It uses its parameters to initialize the class's
+data members. A constructor might also dynamically allocate parts of the class object.
+Cleanup, in C++, is done by destructors. Each class has exactly one destructor that is called when the
+class object is explicitly freed or when it goes out of scope at the end of the code block that declares it.
+1.2. OBJCT ORIENTED PRINCIPLES. 3
+The name of the destructor is a tilde () followed by the class name. The job of a destructor is to free
+dynamically allocated parts of the class object.
+ Coherent construction. Whenever possible, objects should be fully initialized when they are created. The
+data needed to initialize the object should be delivered as parameters to the class's constructor. The major
+exception to this guideline involves arrays of objects which cannot be fully initialized when the array is
+allocated.
+1.2.1 Getting Started in C++
+To write the First real C++ program, the programmer must understand I/O and classes. These topics are
+covered in Chapters 2 and 3. Chapter 3 gives an example program with no classes that a variety of input and
+output techniques. It defines an array of objects, opens and reads a file and prints the data.
+At the end of Chapter 3 we introduce a program that will be carried through the following chapters, and
+developed more fully at each step. Chapter 3 gives a C version of this program, then an equivalent C++ version
+using one data class.
+Chapter 4 introduces and implements some fundamental OO concepts and adds more functionality and a
+controller class to the program. Chapter 5 introduces dynamic allocation and an array that grows, as needed
+(the FlexArray class). Chapter 6 discusses STL strings and algorithms and uses the stl vector class, instead
+of a FlexArray. By mastering these C++ features, you should be well prepared to begin the Data Structures
+course.
+4 CHAPTER 1. ISSUES AND OVERVIEW
