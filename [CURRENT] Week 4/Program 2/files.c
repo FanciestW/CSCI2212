@@ -13,6 +13,7 @@ char OUTPUT[256];
 char KEYWORD[256];
 char REPLACE[256];
 char MATCH[256];
+int count = 0;
 //=============================================================================
 
 int main(void)
@@ -61,6 +62,7 @@ int ioFile(void)
 		if(x == KEYWORD[0]) check(x, inputFile, outputFile);
 		else fprintf(outputFile, "%c", x);
 	}
+	printf("\n%i Matches\n", count);
 	fclose(inputFile);
 	fclose(outputFile);
 }
@@ -82,5 +84,6 @@ int check(int x, cstream inputFile, cstream outputFile)
 		}
 	}
 	fprintf(outputFile, "%s", REPLACE);
+	count++;
 	return 0;
 }
