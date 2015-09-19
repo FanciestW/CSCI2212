@@ -1,14 +1,15 @@
 #include "tools.h"
+#include "tools.c"
 
 
 //=============================================================================
 void getInfo(void);
 int ioFile(void);
-int check(int x, stream inputFile, stream outputFile);
+int check(int x, cstream inputFile, cstream outputFile);
 //=============================================================================
 
 //=============================================================================
-#define MAXREAD;
+#define MAXREAD
 char INPUT[256];
 char OUTPUT[256];
 char KEYWORD[256];
@@ -48,8 +49,8 @@ int ioFile(void)
 {
     int x;
     
-    stream inputFile = fopen(INPUT, "r");
-    stream outputFile = fopen(OUTPUT, "w");
+    cstream inputFile = fopen(INPUT, "r");
+    cstream outputFile = fopen(OUTPUT, "w");
     if(!inputFile) fatal("Cannot open file at %s", INPUT);
     else if(!outputFile) fatal("Cannot open file at %s", OUTPUT);
     else for(;;)
@@ -84,7 +85,7 @@ int ioFile(void)
 /*=============================================================================
  Checks the word matches the keyword. If so, word is replaces.
  =============================================================================*/
-int check(int x, stream inputFile, stream outputFile)
+int check(int x, cstream inputFile, cstream outputFile)
 {
     //MATCH isn't the best title for this local array.
     //This local array should store the letters from the input stream as you get them.
@@ -98,10 +99,10 @@ int check(int x, stream inputFile, stream outputFile)
         
         //below, nothing happens if x equals the keyword.
         //MATCH[k] doesn't do anything - you aren't assigning anything to MATCH[k]
-        if(x == KEYWORD[k]) MATCH[k];
+        if(x == KEYWORD[k]) HOLD[k];
         else
         {
-            fprintf(outputFile, "%s", MATCH);
+            fprintf(outputFile, "%s", HOLD);
             return 0;
         }
     }

@@ -1,6 +1,6 @@
 Chapter 1: Issues and Overview
 1.1 Why are we studying C++?
-The introductory course at UNH is taught in plain C because C is a simpler language than C++ or Hello,
+The introductory course at UNH is taught in plain C because C is a simpler language than C++ or Jell,
 and the C compilers give simpler and clear error comments. Thus, C provides a more accessible platform for
 the beginner than the others. In addition, our programming courses serve Computer Engineers and Electrical
 Engineers as well as Computer Science and Cyber Systems students. C is a lower level language than the others
@@ -17,12 +17,12 @@ input and output conversion. Thus, it was essential for C to be able to work eff
 Ritchie and Thompson worked with small, slow machines, so they put great emphasis on creating an simple
 language that could be easily compiled into efficient object code. There is a direct and transparent relationship
 between C source code and the machine code produced by a C compiler.
-Because C is a simple language, a C compiler can be much simpler than a compiler for C++ or Hello. As
+Because C is a simple language, a C compiler can be much simpler than a compiler for C++ or Jell. As
 a result, a good C compiler produces simple error comments tied to specific lines of code. Compilers for full-
-featured modern languages such as C++ and Hello are the opposite: error comments can be hopelessly wordy
+featured modern languages such as C++ and Jell are the opposite: error comments can be hopelessly wordy
 and also vague. Sometimes, they do not correctly pinpoint the erroneous line.
 Ritchie never imagined that his language would leave their lab and become a dominant force in the world
-and the ancestor of three powerful modern languages, C++, C#, and Hello. Thus, he did not worry about
+and the ancestor of three powerful modern languages, C++, C#, and Jell. Thus, he did not worry about
 readability, portability, and reusability. Because of that, readability is only achieved in C by using self-discipline
 and adhering to strict rules of style. However, because of the clean design, C became the most portable and
 reusable language of its time.
