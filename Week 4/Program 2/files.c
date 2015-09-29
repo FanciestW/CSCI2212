@@ -2,7 +2,7 @@
 #include "tools.c"
 
 //=============================================================================
-#define MAXREAD 255
+#define MAXREAD "255"
 #define MAXSIZE 256
 char INPUT[MAXSIZE];
 char OUTPUT[MAXSIZE];
@@ -16,8 +16,6 @@ void getInfo(void);
 int ioFile(void);
 int check(int x, cstream inputFile, cstream outputFile);
 //=============================================================================
-
-
 
 int main(void)
 {
@@ -44,7 +42,7 @@ void getInfo(void)
 
 /*=============================================================================
  Reads input file and writes to output file, replacing keyword with replacement
- =============================================================================*/
+ ============================================================================*/
 int ioFile(void)
 {
     int x;
@@ -71,7 +69,7 @@ int ioFile(void)
 }
 
 /*=============================================================================
- Checks the word matches the keyword. If so, word is replaces.
+ Checks if the word matches the keyword. If so, word is replaces.
  =============================================================================*/
 int check(int x, cstream inputFile, cstream outputFile)
 {

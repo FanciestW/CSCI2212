@@ -1,0 +1,4 @@
+This is the data file, named exam1.txt, for the first exam.   It does not 
+say anything useful.   So just write your program and when it runs! use 
+this file to test it. It is just a short file.  Fun?  Not much.  Work?  
+Sure!  Don’t stress out!
