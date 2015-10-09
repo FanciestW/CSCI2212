@@ -43,9 +43,9 @@ int ioFile(void)
 		str = str.substr(0, str.find('\''));
 		str = str.substr(0, str.find('?'));
 		str = str.substr(0, str.find('!'));
-		if(inputFile.eof()) break;
+		cout << str << endl;		
 		if(str.length() == 4) outputFile << str << endl;
-		cout << str << endl;
+		if(inputFile.eof()) break;
 	}
 
 	inputFile.close();
