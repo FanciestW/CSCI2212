@@ -46,11 +46,9 @@ int ioFile(void)
 {
 	char x;
 
-	ifstream inputFile;
-	inputFile.open(INPUT.c_str());
+	ifstream inputFile(INPUT.c_str());
 	if(!inputFile) fatal("Cannot open file");
-	ofstream outputFile;
-	outputFile.open(OUTPUT.c_str());
+	ofstream outputFile(OUTPUT.c_str());
 	if(!outputFile) fatal("Cannot open file");
 	else for(;;)
 	{
