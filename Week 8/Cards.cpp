@@ -1,38 +1,18 @@
-#include "tools.hpp"
-#include "tools.cpp"
+#include "Cards.hpp"
 
 const int point[13] = {1,2,3,4,5,6,7,8,9,10,10,10,10};
 const string ranks[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 const string suits[4] = {"Spades", "Hearts", "Diamonds", "Clubs"};
 enum SuitT {SPADES, HEARTS, DIAMONDS, CLUBS};
 
-class CardT{
-	private:
-		int suitT, rankT;
-	public:
-		CardT(){
-
-		}
-
-		CardT(int suit, int rank){
-			suitT = suit;
-			rankT = rank;
-		}
-
-		void setCard(int x, int y){
-			suitT = x;
-			rankT = y;
-		}
-
-		void printCard(ostream& out){
-			out.width(10);
-			out << left << ranks[rankT];
-			out.width(10);
-			out << suits[suitT];
-			out.width(10);
-			out << right << "Point: " << point[rankT] << endl;
-		}
-};
+void CardT::printCard(ostream& out){
+    out.width(10);
+    out << left << ranks[rankT];
+    out.width(10);
+    out << suits[suitT];
+    out.width(10);
+    out << right << "Point: " << point[rankT] << endl;
+}
 
 int main(){
 	banner();
