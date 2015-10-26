@@ -11,5 +11,5 @@ class CardT{
 			suitT = suit;
 			rankT = rank;
 		}
-		void printCard(ostream& out);
+		void print(ostream& out);
 };

@@ -5,7 +5,7 @@ const string ranks[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Ja
 const string suits[4] = {"Spades", "Hearts", "Diamonds", "Clubs"};
 enum SuitT {SPADES, HEARTS, DIAMONDS, CLUBS};
 
-void CardT::printCard(ostream& out){
+void CardT::print(ostream& out){
     out.width(10);
     out << left << ranks[rankT];
     out.width(10);
