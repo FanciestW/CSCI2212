@@ -5,7 +5,7 @@ const string ranks[13] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Ja
 const string suits[4] = {"Spades", "Hearts", "Diamonds", "Clubs"};
 enum SuitT {SPADES, HEARTS, DIAMONDS, CLUBS};
 
-void CardT::printCard(ostream& out){
+void CardT::print(ostream& out){
     out.width(10);
     out << left << ranks[rankT];
     out.width(10);
@@ -14,7 +14,7 @@ void CardT::printCard(ostream& out){
     out << right << "Point: " << point[rankT] << endl;
 }
 
-void CardT::printSerial(ostream& out){
+void CardT::serialize(ostream& out){
     out.width(5);
     out << left << rankT;
     out.width(5);
@@ -33,15 +33,15 @@ void DeckT::createDeck(){
     }
 }
 
-void DeckT::printDeck(ostream *out){
+void DeckT::printDeck(ostream& out){
     for(int n = 0; n < 52; n++){
-        cards[n].printCard(*out);
+        cards[n].print(out);
     }
 }
 
-void DeckT::printSerialDeck(ostream *out){
+void DeckT::printSerialDeck(ostream& out){
     for(int n = 0; n < 52; n++){
-        cards[n].printSerial(*out);
+        cards[n].serialize(out);
     }
 }
 
@@ -49,7 +49,7 @@ int main(){
 	banner();
 	srand((unsigned) time(NULL));
 	DeckT deck = DeckT(&cout);
-	deck.createDeck();
-	deck.printDeck(&cout);
+	deck.print();
+	deck.serialize(cout);
 	bye();
 }

@@ -10,8 +10,8 @@ class CardT{
 			suitT = suit;
 			rankT = rank;
 		}
-		void printCard(ostream& out);
-		void printSerial(ostream& out);
+		void print(ostream& out);
+		void serialize(ostream& out);
 };
 
 class DeckT{
@@ -25,6 +25,6 @@ class DeckT{
 			output = out;
 		}
 		void createDeck();
-        void printDeck(ostream *out);
-        void printSerialDeck(ostream *out);
+        void print(ostream& out);
+        void serialize(ostream& out);
 };
