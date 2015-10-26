@@ -4,7 +4,7 @@
 const int point[13] = {1,2,3,4,5,6,7,8,9,10,10,10,10};
 const string ranks[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 const string suits[4] = {"Spades", "Hearts", "Diamonds", "Clubs"};
-enum SuitT {SPADES, HEARTS, DIAMONDS, CLUBS}; 
+enum SuitT {SPADES, HEARTS, DIAMONDS, CLUBS};
 
 class CardT{
 	private:
@@ -37,10 +37,11 @@ class CardT{
 int main(){
 	banner();
 	CardT deck[52];
+	int index = 0;
 	for(int rank = 0; rank < 13; rank++){
 		for(int suit = 0; suit < 4; suit++){
-			deck[rank * suit] = CardT(suit, rank);
-			deck[rank * suit].printCard(cout);
+			deck[index] = CardT(suit, rank);
+			deck[index].printCard(cout);
 		}
 	}
 	bye();
