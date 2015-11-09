@@ -1,6 +1,6 @@
 #include "Cards.hpp"
 
-const int point[13] = {1,2,3,4,5,6,7,8,9,10,10,10,10};
+const int points[13] = {1,2,3,4,5,6,7,8,9,10,10,10,10};
 const string ranks[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 const string suits[4] = {"Spades", "Hearts", "Diamonds", "Clubs"};
 enum SuitT {SPADES, HEARTS, DIAMONDS, CLUBS};
@@ -11,7 +11,7 @@ void CardT::printCard(ostream& out){
     out.width(10);
     out << suits[suitT];
     out.width(10);
-    out << right << "Point: " << point[rankT] << endl;
+    out << right << "Point: " << points[point] << endl;
 }
 
 int main(){
