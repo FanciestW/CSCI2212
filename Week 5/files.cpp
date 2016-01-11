@@ -50,17 +50,15 @@ int ioFile(void)
 	if(!inputFile) fatal("Cannot open file");
 	ofstream outputFile(OUTPUT.c_str());
 	if(!outputFile) fatal("Cannot open file");
-	else for(;;)
-	{
-		inputFile.get(x);
-		if(inputFile.eof()) break;
-		if(x == 0)
-		{
-			fatal("File Read Error");
-			return 0;
-		}
-		if(x == KEYWORD.at(0)) check(x, inputFile, outputFile);
-		else outputFile << x;
+	else for(;;){
+        inputFile.get(x);
+        if(inputFile.eof()) break;
+        if(x == 0){
+            fatal("File Read Error");
+            return 0;
+        }
+        if(x == KEYWORD.at(0)) check(x, inputFile, outputFile);
+        else outputFile << x;
 	}
 
 	inputFile.close();
