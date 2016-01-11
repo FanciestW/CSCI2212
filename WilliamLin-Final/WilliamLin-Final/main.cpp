@@ -15,6 +15,6 @@ int main( void ) {
     if( !infile ) fatal( "employee.txt cannot be opened for input" );
     cout << "employee.txt is open\n";
     Stats s( infile );
-    s.run();
+    s.print();
     return 0;
 }
