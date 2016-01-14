@@ -1,15 +1,12 @@
-//
-//  main.cpp
-//  Steganography
-//
-//  Created by William Lin on 11/17/15.
-//  Copyright © 2015 William Lin. All rights reserved.
-//
+#include "tools.hpp"
+#include "pgm.hpp"
 
-#include <iostream>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+int main(){
+    banner();
+    string fileName;
+    cout << "Please enter the name of the .pgm file: ";
+    cin >> fileName;
+    Pgm pgm = Pgm(fileName.c_str());
+    
+    bye();
 }

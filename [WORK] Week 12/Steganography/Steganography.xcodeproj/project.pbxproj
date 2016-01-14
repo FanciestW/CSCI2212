@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D110A7571C4801F700228580 /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D110A7551C4801F700228580 /* tools.cpp */; };
+		D110A75A1C4802AF00228580 /* pgm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D110A7581C4802AF00228580 /* pgm.cpp */; };
 		D1CBCD041BFB720500B8B71F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1CBCD031BFB720500B8B71F /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D110A7551C4801F700228580 /* tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tools.cpp; sourceTree = "<group>"; };
+		D110A7561C4801F700228580 /* tools.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tools.hpp; sourceTree = "<group>"; };
+		D110A7581C4802AF00228580 /* pgm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pgm.cpp; sourceTree = "<group>"; };
+		D110A7591C4802AF00228580 /* pgm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pgm.hpp; sourceTree = "<group>"; };
 		D1CBCD001BFB720500B8B71F /* Steganography */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Steganography; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1CBCD031BFB720500B8B71F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				D1CBCD031BFB720500B8B71F /* main.cpp */,
+				D110A7591C4802AF00228580 /* pgm.hpp */,
+				D110A7581C4802AF00228580 /* pgm.cpp */,
+				D110A7561C4801F700228580 /* tools.hpp */,
+				D110A7551C4801F700228580 /* tools.cpp */,
 			);
 			path = Steganography;
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D110A75A1C4802AF00228580 /* pgm.cpp in Sources */,
 				D1CBCD041BFB720500B8B71F /* main.cpp in Sources */,
+				D110A7571C4801F700228580 /* tools.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +249,7 @@
 				D1CBCD091BFB720500B8B71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
