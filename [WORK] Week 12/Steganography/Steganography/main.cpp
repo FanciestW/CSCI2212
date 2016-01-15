@@ -4,9 +4,13 @@
 int main(){
     banner();
     string fileName;
-    cout << "Please enter the name of the .pgm file: ";
+    string outFile;
+    cout << "Please enter the .pgm file: ";
     cin >> fileName;
+    cout << "Please enter an output file: ";
+    cin  >> outFile;
+    ofstream out(outFile);
     Pgm pgm = Pgm(fileName.c_str());
-    
+    pgm.extract(out);
     bye();
 }
