@@ -104,6 +104,7 @@ void Pgm::reverse() {
 	}
 }
 
-void Pgm::extract(ofstream&){
+void Pgm::extract(ofstream& out){
+    int size = width * height;
     
 }
